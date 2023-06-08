@@ -6,6 +6,7 @@ Module implementing Battle.
 
 import os
 import pickle
+from importlib import import_module
 
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QDialog
@@ -28,14 +29,15 @@ class Battle(QDialog, Ui_Dialog):
         self.window = parent
         botnames = []
         self.listBots = {}
-        botFiles = os.listdir(os.getcwd() + "/Robots")
+        botFiles = os.listdir(os.path.join(os.getcwd(), "python_robocode", "Robots"))
         for botFile in botFiles:
             if botFile.endswith(".py"):
                 botName = botPath = botFile[: botFile.rfind(".")]
                 if botName not in botnames:
                     botnames.append(botName)
                     try:
-                        botModule = __import__(botPath)
+                        botModule = import_module(f"python_robocode.Robots.{botPath}")
+
                         for name in dir(botModule):
                             if getattr(botModule, name) in Robot.__subclasses__():
                                 someBot = getattr(botModule, name)

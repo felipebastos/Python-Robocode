@@ -4,7 +4,7 @@
 import math
 from math import cos, radians, sin
 
-from robot import Robot  # Import a base Robot
+from python_robocode.Objects.robot import Robot  # Import a base Robot
 
 #
 # Algorithm:

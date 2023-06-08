@@ -1,7 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 
-from robot import Robot  # Import a base Robot
+from python_robocode.Objects.robot import Robot  # Import a base Robot
 
 
 class Demo(Robot):  # Create a Robot

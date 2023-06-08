@@ -1,6 +1,6 @@
 import math
 
-from robot import Robot
+from python_robocode.Objects.robot import Robot
 
 MOVE_STEP = 5
 WALL_DISTANCE = 50
