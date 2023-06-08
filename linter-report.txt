@@ -1,25 +1,10 @@
-************* Module python_robocode.main
-python_robocode\main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module python_robocode.GUI.battle
-python_robocode\GUI\battle.py:30:8: C0103: Attribute name "listBots" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:31:8: C0103: Variable name "botFiles" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:32:12: C0103: Variable name "botFile" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:34:16: C0103: Variable name "botName" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:34:26: C0103: Variable name "botPath" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:47:27: W0718: Catching too general exception Exception (broad-exception-caught)
-python_robocode\GUI\battle.py:38:24: C0103: Variable name "botModule" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:41:32: C0103: Variable name "someBot" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:47:20: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:48:30: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
-python_robocode\GUI\battle.py:32:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
-python_robocode\GUI\battle.py:50:19: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)
-python_robocode\GUI\battle.py:54:4: C0103: Method name "on_pushButton_clicked" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:62:4: C0103: Method name "on_pushButton_2_clicked" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:66:8: W0612: Unused variable 'item' (unused-variable)
-python_robocode\GUI\battle.py:70:4: C0103: Method name "on_pushButton_3_clicked" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:76:8: C0103: Variable name "botList" doesn't conform to snake_case naming style (invalid-name)
-python_robocode\GUI\battle.py:84:4: C0116: Missing function or method docstring (missing-function-docstring)
-python_robocode\GUI\battle.py:84:34: C0103: Argument name "botList" doesn't conform to snake_case naming style (invalid-name)
+python_robocode\GUI\battle.py:49:27: W0718: Catching too general exception Exception (broad-exception-caught)
+python_robocode\GUI\battle.py:33:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+python_robocode\GUI\battle.py:56:4: C0103: Method name "on_pushButton_clicked" doesn't conform to snake_case naming style (invalid-name)
+python_robocode\GUI\battle.py:64:4: C0103: Method name "on_pushButton_2_clicked" doesn't conform to snake_case naming style (invalid-name)
+python_robocode\GUI\battle.py:68:8: W0612: Unused variable 'item' (unused-variable)
+python_robocode\GUI\battle.py:72:4: C0103: Method name "on_pushButton_3_clicked" doesn't conform to snake_case naming style (invalid-name)
 ************* Module python_robocode.GUI.outPrint
 python_robocode\GUI\outPrint.py:1:0: C0103: Module name "outPrint" doesn't conform to snake_case naming style (invalid-name)
 python_robocode\GUI\outPrint.py:12:0: C0103: Class name "outPrint" doesn't conform to PascalCase naming style (invalid-name)
@@ -619,4 +604,4 @@ python_robocode\Objects\__init__.py:1:0: R0801: Similar lines in 2 files
         self.pushButton.setSizePolicy(sizePolicy) (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 5.55/10 (previous run: 5.55/10, +0.00)
+Your code has been rated at 5.67/10 (previous run: 5.57/10, +0.10)

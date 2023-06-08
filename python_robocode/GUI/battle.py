@@ -27,29 +27,29 @@ class Battle(QDialog, Ui_Dialog):
         QDialog.__init__(self, parent)
         self.setupUi(self)
         self.window = parent
-        botnames = []
-        self.listBots = {}
-        botFiles = os.listdir(os.path.join(os.getcwd(), "python_robocode", "Robots"))
-        for botFile in botFiles:
-            if botFile.endswith(".py"):
-                botName = botPath = botFile[: botFile.rfind(".")]
-                if botName not in botnames:
-                    botnames.append(botName)
+        bot_names = []
+        self.list_bots = {}
+        bot_files = os.listdir(os.path.join(os.getcwd(), "python_robocode", "Robots"))
+        for bot_file in bot_files:
+            if bot_file.endswith(".py"):
+                bot_name = bot_path = bot_file[: bot_file.rfind(".")]
+                if bot_name not in bot_names:
+                    bot_names.append(bot_name)
                     try:
-                        botModule = import_module(f"python_robocode.Robots.{botPath}")
+                        bot_module = import_module(f"python_robocode.Robots.{bot_path}")
 
-                        for name in dir(botModule):
-                            if getattr(botModule, name) in Robot.__subclasses__():
-                                someBot = getattr(botModule, name)
-                                bot = someBot
-                                self.listBots[
+                        for name in dir(bot_module):
+                            if getattr(bot_module, name) in Robot.__subclasses__():
+                                some_bot = getattr(bot_module, name)
+                                bot = some_bot
+                                self.list_bots[
                                     str(bot).replace("<class '", "").replace("'>", "")
                                 ] = bot
                                 break
-                    except Exception as e:
-                        print("Problem with bot file '{}': {}".format(botFile, str(e)))
+                    except Exception as exception:
+                        print(f"Problem with bot file '{bot_file}': {str(exception)}")
 
-        for key in self.listBots.keys():
+        for key in self.list_bots:
             self.listWidget.addItem(key)
 
     @pyqtSlot()
@@ -75,19 +75,26 @@ class Battle(QDialog, Ui_Dialog):
         """
         width = self.spinBox.value()
         height = self.spinBox_2.value()
-        botList = []
+        bot_list = []
         for i in range(self.listWidget_2.count()):
             key = str(self.listWidget_2.item(i).text())
-            botList.append(self.listBots[key])
+            bot_list.append(self.list_bots[key])
 
-        self.save(width, height, botList)
-        self.window.setUpBattle(width, height, botList)
+        self.save(width, height, bot_list)
+        self.window.setUpBattle(width, height, bot_list)
 
-    def save(self, width, height, botList):
+    def save(self, width, height, bot_list):
+        """Saves the battle configuration.
+
+        Args:
+            width (float): Field width
+            height (float): Field height
+            botList (List[Robot]): List of robots selected
+        """
         dico = {}
         dico["width"] = width
         dico["height"] = height
-        dico["botList"] = botList
+        dico["botList"] = bot_list
 
         if not os.path.exists(os.getcwd() + "/.datas/"):
             os.makedirs(os.getcwd() + "/.datas/")
